@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Zxing Library</string>
+    <string name="msg_camera_framework_bug">相机被占用或没有相机权限，请检查</string>
+    <string name="button_ok">退出</string>
+    <string name="viewfinderview_status_text1">将二维码/条码放入取景框内</string>
+    <string name="viewfinderview_status_text2">即可自动扫描</string>
+    <string name="sweep">扫一扫</string>
+    <string name="close_flight">关闭闪光灯</string>
+    <string name="open_flight">打开闪光灯</string>
+    <string name="error">识别二维码失败</string>
+    <string name="album">相册</string>
+
+</resources>

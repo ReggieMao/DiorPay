@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gene.diorpay">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.gene.diorpay.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:roundIcon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label,android:icon,android:allowBackup,android:name">
+
+        <!-- PictureSelector相关-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 极光推送相关-->
+        <receiver
+            android:name="com.gene.diorpay.service.JPushService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.gene.diorpay" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 项目本身activity相关-->
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.StartActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NumPwdActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity
+            android:name=".activity.ChangePwd1Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity
+            android:name=".activity.ChangePwd2Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity
+            android:name=".activity.ChangePwd3Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity
+            android:name=".activity.PwdSureActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <activity
+            android:name=".activity.GesturePwd0Activity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.GesturePwd1Activity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.GesturePwd2Activity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SendCoinActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CollectCoinActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AssetInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SendAssetActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NoticeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.HelpCenterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CollectAssetActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AddAssetActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.HotActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NewsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NoticeInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MessageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AgreementActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.TradeRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.VersionLogActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.LogInfoActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">library</string>
+    <string name="progresshud_loading">Loading</string>
+    <string name="sending">Sending</string>
+    <string name="input_pwd">Please enter password for transaction</string>
+    <string name="select_miner">Select miner fee</string>
+    <string name="select_language">Language</string>
+    <string name="miner_tip">Economy fee may cost delay on transaction confirmation. Please select premium fee if required for confirmation time.</string>
+    <string name="first">Premium</string>
+    <string name="ordinary">Ordinary</string>
+    <string name="economics">Economy</string>
+    <string name="chinese">Chinese</string>
+    <string name="english">English</string>
+    <string name="sure">Confirm</string>
+    <string name="to_set">To set up</string>
+    <string name="cancel">Cancel</string>
+    <string name="rob_logout">Account error. Your account has been logged in another place. Please ensure your account security.</string>
+    <string name="toast_update_nickname">Please enter nickname</string>
+    <string name="net_error">Net error</string>
+    <string name="set_avatar">Set up a head image</string>
+    <string name="take_photo">Take a picture</string>
+    <string name="from_photo">Choose from mobile albums</string>
+    <string name="logout_sure">Are you sure logout?</string>
+    <string name="safe_for_set">To ensure safety, please set gesture password</string>
+</resources>

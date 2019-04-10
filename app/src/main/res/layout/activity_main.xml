@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="49dp">
+
+        <com.gene.library.view.SwipeViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:id="@+id/et_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <RadioButton
+                android:id="@+id/rb_asset"
+                style="@style/TabButton"
+                android:drawableTop="@drawable/selector_rb_asset"
+                android:layout_marginTop="7dp"
+                android:text=""
+                android:textSize="11sp"
+                android:textColor="@drawable/selector_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/rb_trade"
+                style="@style/TabButton"
+                android:drawableTop="@drawable/selector_rb_trade"
+                android:layout_marginTop="7dp"
+                android:text=""
+                android:textSize="11sp"
+                android:textColor="@drawable/selector_rb_text"/>
+
+            <RadioButton
+                style="@style/TabButton"/>
+
+            <RadioButton
+                android:id="@+id/rb_market"
+                style="@style/TabButton"
+                android:drawableTop="@drawable/selector_rb_market"
+                android:layout_marginTop="7dp"
+                android:text=""
+                android:textSize="11sp"
+                android:textColor="@drawable/selector_rb_text"/>
+
+            <RadioButton
+                android:id="@+id/rb_mine"
+                style="@style/TabButton"
+                android:drawableTop="@drawable/selector_rb_mine"
+                android:layout_marginTop="7dp"
+                android:text=""
+                android:textSize="11sp"
+                android:textColor="@drawable/selector_rb_text"/>
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/center"
+        layout="@layout/view_arc_menu" />
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hot"
+        android:textSize="18sp"
+        android:textColor="@color/c7E"
+        android:paddingLeft="13dp"
+        android:layout_marginTop="16dp"
+        android:paddingTop="12dp"
+        android:background="@color/white"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/white"/>
+
+    <com.gene.diorpay.view.HorizontalListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:background="@color/white"
+        android:paddingLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/news"
+        android:textSize="18sp"
+        android:textColor="@color/c7E"
+        android:paddingLeft="13dp"
+        android:background="@color/white"
+        android:layout_marginTop="15dp"
+        android:paddingTop="12dp"/>
+
+</LinearLayout>

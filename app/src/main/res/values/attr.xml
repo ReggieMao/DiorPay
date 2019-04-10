@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="position">
+        <enum name="left_top" value="0" />
+        <enum name="left_bottom" value="1" />
+        <enum name="center" value="2" />
+        <enum name="right_top" value="3" />
+        <enum name="right_bottom" value="4" />
+    </attr>
+    <attr name="radius" format="dimension" />
+
+    <declare-styleable name="ArcMenu">
+        <attr name="position" />
+        <attr name="radius" />
+    </declare-styleable>
+
+    <declare-styleable name="Lock9">
+
+        <attr name="nodeSrc" format="string" />
+        <attr name="nodeOnSrc" format="string" />
+        <attr name="nodeOnSrcErr" format="string" />
+        <attr name="nodeSize" format="dimension" />
+        <attr name="nodeAreaExpand" format="dimension" />
+        <attr name="nodeOnAnim" format="string" />
+        <attr name="lineColor" format="color" />
+        <attr name="lineColorErr" format="color" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="padding" format="dimension" />
+        <attr name="spacing" format="dimension" />
+        <attr name="autoLink" format="boolean" />
+        <attr name="enableVibrate" format="boolean" />
+        <attr name="vibrateTime" format="integer" />
+    </declare-styleable>
+
+</resources>

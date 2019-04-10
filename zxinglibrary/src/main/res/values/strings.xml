@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Zxing Library</string>
+    <string name="msg_camera_framework_bug">The camera is occupied or without the authority of the camera, please check</string>
+    <string name="button_ok">Log out</string>
+    <string name="viewfinderview_status_text1">Put two-dimensional code into the view frame</string>
+    <string name="viewfinderview_status_text2">Automatic scanning</string>
+    <string name="sweep">Scan</string>
+    <string name="close_flight">Flash off</string>
+    <string name="open_flight">Flash on</string>
+    <string name="error">Identification of two dimensional code failure</string>
+    <string name="album">Album</string>
+
+</resources>

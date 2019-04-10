@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageBg">
+
+    <RelativeLayout
+        android:id="@+id/img_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="22dp">
+
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/back"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:text="@string/pwd_tip2a"
+                android:textColor="@color/textBlack"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:text="@string/pwd_tip"
+                android:textColor="@color/textGray"
+                android:textSize="14sp" />
+
+            <com.gene.library.view.PasswordView
+                android:id="@+id/et_pwd"
+                android:layout_width="324dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:inputType="number"
+                app:maxCount="6"
+                app:psdType="weChat"
+                app:rectAngle="0dp"
+                app:divideLineWidth="1dp"
+                app:divideLineWidth1="2dp"
+                app:borderColor="#C7CCD6"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/tv_sure"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bg_round_text_gray1"
+                android:gravity="center"
+                android:text="@string/next"
+                android:elevation="4dp"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">library</string>
+    <string name="progresshud_loading">加载中</string>
+    <string name="sending">发送中</string>
+    <string name="input_pwd">请输入交易密码</string>
+    <string name="select_miner">选择矿工费</string>
+    <string name="select_language">选择语言</string>
+    <string name="miner_tip">选择经济的手续费，可能会导致延长交易确认时间。对时间有要求的交易，请选择优先。</string>
+    <string name="first">优先</string>
+    <string name="ordinary">普通</string>
+    <string name="economics">经济</string>
+    <string name="chinese">简体中文</string>
+    <string name="english">英文</string>
+    <string name="sure">确定</string>
+    <string name="to_set">去设置</string>
+    <string name="cancel">取消</string>
+    <string name="rob_logout">您的账号存在异常，在其他地方使用，请确认账号安全。</string>
+    <string name="toast_update_nickname">请输入昵称</string>
+    <string name="net_error">网络异常</string>
+    <string name="set_avatar">设置头像</string>
+    <string name="take_photo">拍照</string>
+    <string name="from_photo">从手机相册选择</string>
+    <string name="logout_sure">确定要退出？</string>
+    <string name="safe_for_set">为确保安全请去设置手势密码</string>
+</resources>

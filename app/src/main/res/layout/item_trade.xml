@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text=""
+                android:textSize="17sp"
+                android:textColor="@color/textBlack"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:id="@+id/tv_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:text=""
+                android:textSize="10sp"
+                android:textColor="@color/textGray3"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:text=""
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="@color/textBlack"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="17dp"/>
+
+        <TextView
+            android:id="@+id/tv_up_down"
+            android:layout_width="61dp"
+            android:layout_height="32dp"
+            android:text=""
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="13dp"/>
+        
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_gray"/>
+
+</LinearLayout>

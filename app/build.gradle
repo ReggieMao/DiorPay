@@ -1,0 +1,158 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'realm-android'
+
+// 默认版本号
+ext.appVersionCode = 0
+// 默认版本名
+ext.appVersionName = "1.0.0"
+// 默认apk输出路径
+ext.appReleaseDir = "D:\\DiorpayApk\\"
+// 默认正式包后缀名
+ext.appSuffixName = "_release.apk"
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+        jcenter()
+    }
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.3"
+
+    def proFile = file("diorpay.properties")
+    Properties pro = new Properties()
+    proFile.withInputStream { stream->
+        pro.load(stream)
+    }
+    appReleaseDir = pro.appReleaseDir
+    appVersionCode = Integer.valueOf(pro.appVersionCode)
+    appVersionName = pro.appVersionName
+    appSuffixName = pro.appSuffixName
+
+    def code = pro.appVersionCode.toInteger() + 1
+    pro.appVersionCode = code.toString()
+    pro.store(proFile.newWriter(), null)
+
+    defaultConfig {
+        applicationId "com.gene.diorpay"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode code
+        versionName appVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true  // 突破应用方法数65535的一个限制
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "d294547a9cd6647016bdcc5f", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+
+        multiDexEnabled true
+    }
+
+    // 添加签名文件配置
+    signingConfigs {
+        debug {
+            storeFile file("diorpay.jks")
+            storePassword "EbTech123456"
+            keyAlias "EBei"
+            keyPassword "EbTech123456"
+        }
+        release {
+            storeFile file("diorpay.jks")
+            storePassword "EbTech123456"
+            keyAlias "EBei"
+            keyPassword "EbTech123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            // 自定义release版本的apk文件的输出路径和文件名
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    if (output.outputFile != null) {
+                        if (output.outputFile.name.endsWith('.apk') && 'release'.equals(variant.buildType.name)) {
+                            //开始输出,自定义输出路径
+                            output.outputFile = new File(appReleaseDir + "diorpay_" + getDate() + "_" + appVersionName + "_" + code + appSuffixName)
+                        } else {
+                            def file = variant.outputs[0].outputFile
+                            variant.outputs[0].outputFile = new File(file.parent, file.name.replace("diorpay_release.apk", "diorpay_" + defaultConfig.versionName + ".apk"))
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //打包加入
+    lintOptions {
+        abortOnError false
+    }
+
+    //为防止PictureSelector和RxJava冲突加入
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    //禁止Lint出错导致打包异常终止
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+}
+
+// 获取格式化时间，用来标识打包时间，同时避免命名冲突
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile project(':library')
+    compile project(':zxinglibrary')
+    // multidex
+    compile 'com.android.support:multidex:1.0.1'
+    // 手势视图lock9view
+    compile 'com.takwolf.android:lock9view:0.1.3'
+    //android6.0权限处理库
+    compile 'com.yanzhenjie:permission:1.1.0'
+    //极光推送
+    compile 'cn.jiguang.sdk:jpush:3.1.1'
+    compile 'cn.jiguang.sdk:jcore:1.1.9'
+    //PictureSelector
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.1'
+}
