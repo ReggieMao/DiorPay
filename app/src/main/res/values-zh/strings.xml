@@ -85,7 +85,6 @@
     <string name="help1">如何备份钱包/身份？</string>
     <string name="help1_a">在DiorPay中, 我们引入了数字身份的概念, 关于什么是数字身份, 可以点击这里查看详细解释。那么我们该如何备份钱包/身份呢?\n1. 点击“我的” -> 再点击顶部的头像按钮, 进入我的身份界面\n2. 点击“备份身份”, 输入创建身份时的密码\n3. 开始备份身份, 请按照顺序抄写助记词, 关于如何安全备份助记词, 可以点击这里查看详细讲解.\nPS: 当你创建数字身份的时候, 该数字身份会对应一个钱包地址, 是DOB的钱包地址, 你备份的身份, 也是这个地址所对应的助记词。</string>
     <string name="help2">DiorPay支持哪些数字货币？</string>
-    <!--<string name="help2_a">DiorPay是跨链钱包, 目前支持SAS BZF DOB ETH  BTC 以及其他符合 ERC20 标准的代币\n另外, 用户可以自己查看想要搜索的代币是否符合 ERC20 标准: \n<a href="https://etherscan.io/tokens">https://etherscan.io/tokens</a></string>-->
     <string name="help2_a">DiorPay是跨链钱包, 目前第一阶段支持：SAS、BZF、DOB、ETH、BTC五种币、第二阶段我们将陆续开放对EOS、LTC、XRP、ADA、BCH等币种的支持。</string>
     <string name="help3">钱包首页显示的数字货币类型可以修改吗？</string>
     <string name="help3_a">不可以。</string>
